@@ -20,15 +20,15 @@
 
         public static void Main()
         {
-            Players.Add(new DummyPlayer());
+            //Players.Add(new DummyPlayer());
             Players.Add(new SmartPlayer());
-            Players.Add(new ConsolePlayer((6 * Players.Count) + NumberOfCommonRows));
-            Players.Add(new DummyPlayer());
-            Players.Add(new SmartPlayer());
-            Players.Add(new DummyPlayer());
+            Players.Add(new ConsolePlayer(0, 0));
+            // Players.Add(new DummyPlayer());
+            // Players.Add(new SmartPlayer());
+            // Players.Add(new DummyPlayer());
 
-            var gameHeight = (6 * Players.Count) + NumberOfCommonRows;
-            Table(gameHeight);
+            //var gameHeight = (6 * Players.Count) + NumberOfCommonRows;
+            Table(0);
 
             var game = Game();
             game.Start();
@@ -48,12 +48,12 @@
 
         private static void Table(int gameHeight)
         {
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.BufferHeight = Console.WindowHeight = gameHeight;
-            Console.BufferWidth = Console.WindowWidth = GameWidth;
+            // Console.BackgroundColor = ConsoleColor.Black;
+            // Console.ForegroundColor = ConsoleColor.Gray;
+            // Console.BufferHeight = Console.WindowHeight = gameHeight;
+            // Console.BufferWidth = Console.WindowWidth = GameWidth;
 
-            ConsoleHelper.WriteOnConsole(gameHeight - 1, GameWidth - ProgramName.Length - 1, ProgramName, ConsoleColor.Green);
+            // ConsoleHelper.WriteOnConsole(gameHeight - 1, GameWidth - ProgramName.Length - 1, ProgramName, ConsoleColor.Green);
         }
     }
 }

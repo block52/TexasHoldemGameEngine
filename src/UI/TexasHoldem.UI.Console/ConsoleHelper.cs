@@ -6,15 +6,15 @@
     {
         public static void WriteOnConsole(int row, int col, string text, ConsoleColor foregroundColor = ConsoleColor.Gray, ConsoleColor backgroundColor = ConsoleColor.Black)
         {
-            Console.ForegroundColor = foregroundColor;
-            Console.BackgroundColor = backgroundColor;
-            Console.SetCursorPosition(col, row);
-            Console.Write(text);
+            // Console.ForegroundColor = foregroundColor;
+            // Console.BackgroundColor = backgroundColor;
+            // Console.SetCursorPosition(col, row);
+            Console.WriteLine(text);
         }
 
         public static string UserInput(int row, int col)
         {
-            Console.SetCursorPosition(col, row);
+            // Console.SetCursorPosition(col, row);
             return Console.ReadLine();
         }
     }

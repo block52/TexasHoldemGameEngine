@@ -87,8 +87,9 @@
 
             do
             {
-                ConsoleHelper.WriteOnConsole(this.row + 2, 2, new string(' ', Console.WindowWidth - 3));
-                ConsoleHelper.WriteOnConsole(this.row + 2, 2, perfix);
+                //ConsoleHelper.WriteOnConsole(this.row + 2, 2, new string(' ', Console.WindowWidth - 3));
+                //ConsoleHelper.WriteOnConsole(this.row + 2, 2, perfix);
+                Console.WriteLine(perfix);
 
                 var text = ConsoleHelper.UserInput(this.row + 2, perfix.Length + 3);
                 int result;
@@ -113,48 +114,52 @@
 
         private void DrawPlayerOptions(int moneyToCall)
         {
-            var col = 2;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "Select action: [");
-            col += 16;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "C", ConsoleColor.Yellow);
-            col++;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "]heck/[");
-            col += 7;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "C", ConsoleColor.Yellow);
-            col++;
+            // var col = 2;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "Select action: [");
+            // col += 16;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "C", ConsoleColor.Yellow);
+            // col++;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "]heck/[");
+            // col += 7;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "C", ConsoleColor.Yellow);
+            // col++;
 
-            var callString = moneyToCall <= 0 ? "]all, [" : "]all(" + moneyToCall + "), [";
+            Console.WriteLine("Select action: [C]heck/[C]all (" + moneyToCall + ") [Raise] [F]old [A]ll-in : ");
 
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, callString);
-            col += callString.Length;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "R", ConsoleColor.Yellow);
-            col++;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "]aise, [");
-            col += 8;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "F", ConsoleColor.Yellow);
-            col++;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "]old, [");
-            col += 7;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "A", ConsoleColor.Yellow);
-            col++;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "]ll-in");
+            // var callString = moneyToCall <= 0 ? "]all, [" : "]all(" + moneyToCall + "), [";
+
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, callString);
+            // col += callString.Length;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "R", ConsoleColor.Yellow);
+            // col++;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "]aise, [");
+            // col += 8;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "F", ConsoleColor.Yellow);
+            // col++;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "]old, [");
+            // col += 7;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "A", ConsoleColor.Yellow);
+            // col++;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "]ll-in");
         }
 
         private void DrawRestrictedPlayerOptions(int moneyToCall)
         {
-            var col = 2;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "Select action: [");
-            col += 16;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "C", ConsoleColor.Yellow);
-            col++;
+            // var col = 2;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "Select action: [");
+            // col += 16;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "C", ConsoleColor.Yellow);
+            // col++;
 
-            var callString = moneyToCall <= 0 ? "]all, [" : "]all(" + moneyToCall + "), [";
+            // var callString = moneyToCall <= 0 ? "]all, [" : "]all(" + moneyToCall + "), [";
 
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, callString);
-            col += callString.Length;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "F", ConsoleColor.Yellow);
-            col++;
-            ConsoleHelper.WriteOnConsole(this.row + 2, col, "]old");
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, callString);
+            // col += callString.Length;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "F", ConsoleColor.Yellow);
+            // col++;
+            // ConsoleHelper.WriteOnConsole(this.row + 2, col, "]old");
+
+            Console.WriteLine("Select action: [C]all (" + moneyToCall + ") [F]old : ");
         }
     }
 }

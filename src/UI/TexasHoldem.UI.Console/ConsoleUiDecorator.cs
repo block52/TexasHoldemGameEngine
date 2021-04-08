@@ -30,14 +30,14 @@
             this.width = width;
             this.commonRow = commonRow;
 
-            this.DrawGameBox();
+            //this.DrawGameBox();
         }
 
         private IReadOnlyCollection<Card> CommunityCards { get; set; }
 
         public override void StartHand(IStartHandContext context)
         {
-            this.UpdateCommonRows(0, 0, new int[] { });
+            // this.UpdateCommonRows(0, 0, new int[] { });
             var dealerSymbol = context.FirstPlayerName == this.Player.Name ? "D" : " ";
 
             ConsoleHelper.WriteOnConsole(this.row + 1, 1, dealerSymbol, ConsoleColor.Green);
@@ -158,20 +158,20 @@
             }
         }
 
-        private void DrawGameBox()
-        {
-            ConsoleHelper.WriteOnConsole(this.row, 0, new string('═', this.width), PlayerBoxColor);
-            ConsoleHelper.WriteOnConsole(this.row + 4, 0, new string('═', this.width), PlayerBoxColor);
-            ConsoleHelper.WriteOnConsole(this.row, 0, "╔", PlayerBoxColor);
-            ConsoleHelper.WriteOnConsole(this.row, this.width - 1, "╗", PlayerBoxColor);
-            ConsoleHelper.WriteOnConsole(this.row + 4, 0, "╚", PlayerBoxColor);
-            ConsoleHelper.WriteOnConsole(this.row + 4, this.width - 1, "╝", PlayerBoxColor);
-            for (var i = 1; i < 4; i++)
-            {
-                ConsoleHelper.WriteOnConsole(this.row + i, 0, "║", PlayerBoxColor);
-                ConsoleHelper.WriteOnConsole(this.row + i, this.width - 1, "║", PlayerBoxColor);
-            }
-        }
+        // private void DrawGameBox()
+        // {
+        //     ConsoleHelper.WriteOnConsole(this.row, 0, new string('═', this.width), PlayerBoxColor);
+        //     ConsoleHelper.WriteOnConsole(this.row + 4, 0, new string('═', this.width), PlayerBoxColor);
+        //     ConsoleHelper.WriteOnConsole(this.row, 0, "╔", PlayerBoxColor);
+        //     ConsoleHelper.WriteOnConsole(this.row, this.width - 1, "╗", PlayerBoxColor);
+        //     ConsoleHelper.WriteOnConsole(this.row + 4, 0, "╚", PlayerBoxColor);
+        //     ConsoleHelper.WriteOnConsole(this.row + 4, this.width - 1, "╝", PlayerBoxColor);
+        //     for (var i = 1; i < 4; i++)
+        //     {
+        //         ConsoleHelper.WriteOnConsole(this.row + i, 0, "║", PlayerBoxColor);
+        //         ConsoleHelper.WriteOnConsole(this.row + i, this.width - 1, "║", PlayerBoxColor);
+        //     }
+        // }
 
         private void DrawCommunityCards()
         {
@@ -180,15 +180,18 @@
                 var cardsAsString = this.CommunityCards.CardsToString();
                 var cardsLength = cardsAsString.Length / 2;
                 var cardsStartCol = (this.width / 2) - (cardsLength / 2);
-                var cardIndex = 0;
-                var spacing = 0;
+                // var cardIndex = 0;
+                // var spacing = 0;
 
                 foreach (var communityCard in this.CommunityCards)
                 {
-                    this.DrawSingleCard(this.commonRow, cardsStartCol + (cardIndex * 4) + spacing, communityCard);
-                    cardIndex++;
+                    // this.DrawSingleCard(this.commonRow, cardsStartCol + (cardIndex * 4) + spacing, communityCard);
+                    // cardIndex++;
 
-                    spacing += communityCard.Type == CardType.Ten ? 1 : 0;
+                    // spacing += communityCard.Type == CardType.Ten ? 1 : 0;
+
+                    var cardColor = this.GetCardColor(communityCard);
+                    Console.WriteLine(communityCard.ToString() + " ");
                 }
             }
         }
